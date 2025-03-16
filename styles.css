@@ -1,0 +1,129 @@
+/* Estilização geral */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Estiliza os containers das matrizes */
+.container {
+    background: white;
+    padding: 20px;
+    margin: 20px;
+    width: 320px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Estiliza o título */
+h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+/* Ajusta os botões de aumentar/diminuir matriz */
+.matriz-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* Define o grid da matriz */
+.matriz-container {
+    display: grid;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Estiliza os inputs dentro das matrizes */
+.matriz-container input {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Botões da calculadora */
+button {
+    padding: 8px 12px;
+    font-size: 14px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    margin: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Ajusta a disposição dos botões */
+.container button {
+    display: inline-block;
+    width: auto;
+}
+
+/* Faz os botões ficarem em grid, organizados */
+.container button:nth-child(4), 
+.container button:nth-child(5), 
+.container button:nth-child(6) {
+    margin-top: 5px;
+}
+
+/* Estiliza o input do multiplicador */
+.input-container {
+    width: 70px;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Faz o botão "Multiplicar por" e o input ficarem alinhados */
+button[id^="botaoMultiplicar"] {
+    display: inline-block;
+    margin-right: 5px;
+}
+
+/* Ajusta os resultados */
+.resultado-container {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.resultado-container h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.resultado-container table {
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+.resultado-container td {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    border: 1px solid black;
+    font-size: 18px;
+}

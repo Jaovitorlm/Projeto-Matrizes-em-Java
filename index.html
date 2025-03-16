@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Matrizes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Insira a Matriz A</h2>
+        <div class="matriz-controls">
+            <button id="diminuirA">-</button>
+            <div class="matriz-container" id="matrizA"></div>
+            <button id="aumentarA">+</button>
+        </div>
+        <button id="botaoTranspostaA">Calcular transposta</button>
+        <button id="botaoInversaA">Calcular inversa</button>
+        <button id="botaoDeterminanteA">Calcular determinante</button>
+        <button id="botaoMultiplicarA">Multiplicar por</button>
+        <input class = "input-container" type="number" id="multiplicadorA" placeholder="Multiplicador">
+        <div class="resultado-container" id="resultadoA"></div>
+    </div>
+
+    <div class="container">
+        <h2>Insira a Matriz B</h2>
+        <div class="matriz-controls">
+            <button id="diminuirB">-</button>
+            <div class="matriz-container" id="matrizB"></div>
+            <button id="aumentarB">+</button>
+        </div>         
+        <button id="botaoTranspostaB">Calcular transposta</button>
+        <button id="botaoInversaB">Calcular inversa</button>
+        <button id="botaoDeterminanteB">Calcular determinante</button>
+        <button id="botaoMultiplicarB">Multiplicar por</button>
+        <input class = "input-container" type="number" id="multiplicadorB" placeholder="Multiplicador">
+        <div class="resultado-container" id="resultadoB"></div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.min.js"></script>
+
+</body>
+</html>
