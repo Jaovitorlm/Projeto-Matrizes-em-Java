@@ -258,14 +258,17 @@ function trocarAeB (matrizIDA, matrizIDB) {
             matrizB[i][j] = parseFloat(inputsB[i * size + j].value) || 0;
         }
     }
-
-    for (let i = 0; i < size; i++) {
-        for (let j = 0; j < size; j++) {
-            inputsA[i * size + j].value = matrizB[i][j]; // Matriz A recebe valores de B
-            inputsB[i * size + j].value = matrizA[i][j]; // Matriz B recebe valores de A
+    if (matrizA.length !== matrizB.length || matrizA[0].length !== matrizB[0].length) {
+        alert("As matrizes devem ter o mesmo tamanho!") ;
+        console.log ("entrou no erro")
+    } else {
+        for (let i = 0; i < size; i++) {
+            for (let j = 0; j < size; j++) {
+                inputsA[i * size + j].value = matrizB[i][j]; // Matriz A recebe valores de B
+                inputsB[i * size + j].value = matrizA[i][j]; // Matriz B recebe valores de A
+            }
         }
     }
-    
 }
 
 //Botão trocar A e B
