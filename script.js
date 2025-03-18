@@ -196,6 +196,46 @@ function matrizASomaMatrizB(matrizIDA, matrizIDB){
     return resultado;
 }
 
+function matrizASubstraiMatrizB(matrizIDA, matrizIDB){
+    let inputs = document.querySelectorAll(`#${matrizIDA} input`);
+    let size = Math.sqrt(inputs.length);
+
+    let matrizA = [];
+    for (let i = 0; i < size; i++) {
+        matrizA[i] = [];
+        for (let j = 0; j < size; j++) {
+            matrizA[i][j] = parseFloat(inputs[i * size + j].value) || 0;
+        }
+    }
+
+    inputs = document.querySelectorAll(`#${matrizIDB} input`);
+    size = Math.sqrt(inputs.length);
+
+    let matrizB = [];
+    for (let i = 0; i < size; i++){
+        matrizB[i] = [];
+        for (let j = 0; j < size; j++) {
+            matrizB[i][j] = parseFloat(inputs[i * size + j].value) || 0;
+        }
+    }
+    
+    let resultado = [];
+    if (matrizA.length !== matrizB.length || matrizA[0].length !== matrizB[0].length) {
+        resultado = [["As matrizes devem ter o mesmo tamanho!"]] ;
+        console.log ("entrou no erro")
+    } else {
+        for (let i = 0; i < size; i++) {
+            resultado[i] = [];
+            for (let j = 0; j < size; j++) {
+                resultado[i][j] = matrizA[i][j] - matrizB[i][j]; 
+            }
+        }
+    }
+
+    exibirMatriz(resultado, "resultadoAB", "Subtração de A - B");
+    return resultado;
+}
+
 // Botão calcular determinante
 document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("botaoDeterminanteA").addEventListener("click", function(){
@@ -225,6 +265,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+//Botão substração entre A e B
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("botaoSubtrairMatrizes").addEventListener("click", function () {
+        matrizASubstraiMatrizB("matrizA", "matrizB");
+    });
+});
 
 // Adiciona os eventos para os botões de aumentar/diminuir
 document.addEventListener("DOMContentLoaded", function () {
