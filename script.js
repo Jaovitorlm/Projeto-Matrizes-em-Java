@@ -236,6 +236,45 @@ function matrizASubstraiMatrizB(matrizIDA, matrizIDB){
     return resultado;
 }
 
+function trocarAeB (matrizIDA, matrizIDB) {
+    let inputsA = document.querySelectorAll(`#${matrizIDA} input`);
+    let size = Math.sqrt(inputsA.length);
+    
+    let matrizA = [];
+    for (let i = 0; i < size; i++) {
+        matrizA[i] = [];
+        for (let j = 0; j < size; j++) {
+            matrizA[i][j] = parseFloat(inputsA[i * size + j].value) || 0;
+        }
+    }
+
+    let inputsB = document.querySelectorAll(`#${matrizIDB} input`);
+    size = Math.sqrt(inputsB.length);
+
+    let matrizB = [];
+    for (let i = 0; i < size; i++){
+        matrizB[i] = [];
+        for (let j = 0; j < size; j++) {
+            matrizB[i][j] = parseFloat(inputsB[i * size + j].value) || 0;
+        }
+    }
+
+    for (let i = 0; i < size; i++) {
+        for (let j = 0; j < size; j++) {
+            inputsA[i * size + j].value = matrizB[i][j]; // Matriz A recebe valores de B
+            inputsB[i * size + j].value = matrizA[i][j]; // Matriz B recebe valores de A
+        }
+    }
+    
+}
+
+//Botão trocar A e B
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("botaoTrocarMatrizes").addEventListener("click", function () {
+        trocarAeB("matrizA", "matrizB");
+    });
+});
+
 // Botão calcular determinante
 document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("botaoDeterminanteA").addEventListener("click", function(){
